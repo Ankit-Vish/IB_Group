@@ -1,0 +1,85 @@
+﻿@model IB_Group.Models.ProjectType
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/fileUpload.js"></script>
+
+
+@*<h1>Create Product</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <input type="hidden" id="fileName" name="fileName" value="">
+        <input type="hidden" id="newfileName" name="newfileName" value="">
+        <div class="form-group">
+            <label asp-for="ProjectName" class="control-label"></label>
+            <input class="form-control" id="ProjectName" type="text" />
+            <span asp-validation-for="ProjectName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsActive" class="control-label"></label>
+            <input class="form-control" id="IsActive" type="checkbox" />
+            <span asp-validation-for="IsActive" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DisplayOrder" class="control-label"></label>
+            <input class="form-control" id="DisplayOrder" type="number" name="quantity" min="1" max="9" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="control-label">Upload Image</label>
+            <input type="file" id="fileUpload" class="fileUpload">
+            <img src="" id="preview">
+            <button id="btnUpload" onclick="fileUpload()">Upload</button>
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" onclick="sumbit()" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+
+    </div>
+</div>*@
+
+<h1>Create Product</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="ProjectName" class="control-label"></label>
+                <input asp-for="ProjectName" class="form-control" />
+                <span asp-validation-for="ProjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsActive" class="control-label"></label>
+                <input asp-for="IsActive" class="form-control" />
+                <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayOrder" class="control-label"></label>
+                <input asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ImagePath" type="hidden" class="form-control" id="newfileName" value="" />
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btnUpload" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label">Upload Image</label>
+            <input type="file" id="fileUpload" class="fileUpload">
+            <img src="" id="preview">
+            <button id="btnUpload" onclick="fileUpload()">Upload</button>
+        </div>
+    </div>
+    </div>
